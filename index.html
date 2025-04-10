@@ -1,109 +1,103 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Filmmaker Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video de Fondo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="video-background">
-        <div id="youtube-player"></div>
+  <div class="top-bar">
+    <img src="logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <div class="top-floating-buttons animate-buttons">
+    <a href="#" class="floating-menu-btn" id="about-btn">ACERCA DE</a>
+    <a href="#" class="floating-menu-btn" id="services-btn">SERVICIOS</a>
+    <a href="#" class="floating-menu-btn" id="contact-btn">CONTACTO</a>
+  </div>
+
+  <div class="floating-buttons">
+    <a href="https://wa.me/5491112345678" target="_blank" class="floating-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/tu_usuario" target="_blank" class="floating-btn instagram"><i class="fab fa-instagram"></i></a>
+    <button id="info-btn" class="floating-btn email"><i class="fas fa-envelope"></i></button>
+  </div>
+
+  <video id="background-video" autoplay loop muted>
+    <source src="video/tu_video.mp4" type="video/mp4" />
+    Tu navegador no soporta el formato de video.
+  </video>
+
+  <div class="video-nav left" id="prev-video">&#10094;</div>
+  <div class="video-nav right" id="next-video">&#10095;</div>
+
+  <div class="grid-overlay"></div>
+
+  <div class="content">
+    <div class="animated-wrapper">
+      <h1 class="animated-text wave">Filmmaker y Visual Storyteller</h1>
+      <p class="animated-text subtitulo wave">Te ayudo a mejorar tus ventas con campañas de video y publicidad en redes</p>
     </div>
-    
-    <header>
-        <nav>
-            <h1>JUAN MARTINEZ</h1>
-            <ul>
-                <li><a href="#about" id="about-link">About</a></li>
-                <li><a href="#work" id="work-link">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  </div>
 
-    <main>
-        <section id="hero">
-            <div>
-                <h2>Filmmaker &amp; Visual Storyteller</h2>
-                <p class="subtitle-subtext">20 años de experiencia en la producción y edición de videos para empresas</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Social Media Buttons -->
-    <div class="social-buttons">
-        <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#contact-popup" id="contact-link" class="social-icon email"><i class="fas fa-envelope"></i></a>
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/XXXXXXXXXXXXX" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <div class="modal" id="about-modal">
+    <div class="modal-content">
+      <span class="close" id="close-about">&times;</span>
+      <h2>Acerca de</h2>
+      <p>Este es el texto de la sección Acerca de.</p>
+      <img src="foto1.jpg" alt="Foto Acerca de" />
+      <p>Nos especializamos en edición de video profesional para empresas y creadores de contenido.</p>
     </div>
+  </div>
 
-    <div id="about-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-button">&times;</span>
-            <h2>About Me</h2>
-            <p>This is the about me content. You can add text, video, or any other HTML elements here.</p>
-            <!-- Example Video (replace with your video embed code) -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="modal" id="services-modal">
+    <div class="modal-content">
+      <span class="close" id="close-services">&times;</span>
+      <h2>Servicios</h2>
+      <div class="video-gallery">
+        <div class="video-item">
+          <video controls class="service-video">
+            <source src="video/video1.mp4" type="video/mp4" />
+            Tu navegador no soporta el formato de video.
+          </video>
+          <p class="video-title">Video Promocional</p>
         </div>
-    </div>
-
-    <div id="work-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-button">&times;</span>
-            <h2>My Work</h2>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <div class="carousel-item">
-                        <img src="https://placehold.co/600x400/000000/FFFFFF?text=Image+1" alt="Image 1">
-                        <p>Description for Image 1 goes here.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p>This video is a must see.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://placehold.co/600x400/444444/FFFFFF?text=Image+3" alt="Image 3">
-                        <p>Description for Image 3 goes here.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://placehold.co/600x400/666666/FFFFFF?text=Image+4" alt="Image 4">
-                        <p>Description for Image 4 goes here.</p>
-                    </div>
-                </div>
-                <button class="carousel-button prev">&#9664;</button>
-                <button class="carousel-button next">&#9654;</button>
-            </div>
+        <div class="video-item">
+          <video controls class="service-video">
+            <source src="video/video2.mp4" type="video/mp4" />
+            Tu navegador no soporta el formato de video.
+          </video>
+          <p class="video-title">Video Corporativo</p>
         </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Contact Popup -->
-    <div id="contact-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-button">&times;</span>
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
+  <div class="modal" id="contact-modal">
+    <div class="modal-content">
+      <span class="close" id="close-contact">&times;</span>
+      <h2>Contacto</h2>
+      <p>Texto del contacto.</p>
+      <img src="foto2.jpg" alt="Foto Contacto" />
+      <p>Contáctanos por correo o WhatsApp para más información sobre nuestros servicios.</p>
     </div>
+  </div>
 
-    <footer id="footer">
-        <p>&copy; 2024 Juan Martinez Filmmaker</p>
-    </footer>
+  <div class="modal" id="info-modal">
+    <div class="modal-content">
+      <span class="close" id="close-info">&times;</span>
+      <h2>Datos de Contacto</h2>
+      <p><strong>Email:</strong> contacto@ejemplo.com</p>
+      <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
+      <p><strong>Dirección:</strong> Av. Siempre Viva 742, Buenos Aires</p>
+    </div>
+  </div>
 
-    <!-- Left Popup -->
-    <a href="https://www.example.com" target="_blank" id="left-popup" class="round-button">
-        <img src="https://placehold.co/50x50/FFFFFF/000000?text=Link" alt="Link">
-    </a>
+  <div class="bottom-bar">
+    <p class="bottom-text">© 2025 Agencia de Edición de Video</p>
+  </div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
