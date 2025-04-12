@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video de Fondo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="top-bar" align="center">
+    <img src="logo.gif" alt="Logo" class="logo" />
+  </div>
+
+  <div class="top-floating-buttons animate-buttons" align="center">
+    <a href="#" class="floating-menu-btn" id="about-btn">BIO</a>
+    <a href="#" class="floating-menu-btn" id="services-btn">PORTFOLIO</a>
+    <a href="#" class="floating-menu-btn" id="contact-btn">SERVICIOS</a>
+  </div>
+
+  <div class="floating-buttons">
+    <a href="https://wa.me/5491112345678" target="_blank" class="floating-btn whatsapp"><i class="fab fa-whatsapp"><img src="whatsapp.png"></i></a>
+    <a href="https://instagram.com/tu_usuario" target="_blank" class="floating-btn instagram"><i class="fab fa-instagram"><img src="instagram.png"></i></a>
+    <button  class="floating-btn email"><i class="fas fa-envelope"><img src="correoelectronico.png"></i></button>
+  </div>
+
+  <video id="background-video" autoplay loop muted>
+    <source src="video/tu_video.mp4" type="video/mp4" />
+    Tu navegador no soporta el formato de video.
+  </video>
+
+  <div class="video-nav left" id="prev-video">&#10094;</div>
+  <div class="video-nav right" id="next-video">&#10095;</div>
+
+  <div class="grid-overlay"></div>
+
+  <div class="content">
+    <div class="animated-wrapper">
+      <h1 class="animated-text wave">Filmmaker y Visual Storyteller</h1>
+      <p class="animated-text subtitulo wave">Te ayudo a mejorar tus ventas con campañas de video y publicidad en redes</p>
+    </div>
+  </div>
+
+  <div class="modal" id="about-modal">
+    <div class="modal-content">
+      <span class="close" id="close-about">&times;</span>
+      <h2>Acerca de</h2>
+      <p>Este es el texto de la sección Acerca de.</p>
+      <img src="f.png" width="450px" height="450px" alt="Foto Acerca de" />
+      <p>Nos especializamos en edición de video profesional para empresas y creadores de contenido.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="services-modal">
+    <div class="modal-content">
+      <span class="close" id="close-services">&times;</span>
+      <h2>Servicios</h2>
+      <div class="video-gallery">
+        
+		  
+		  
+		<div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/kg68cw?" width="100%" style="border:none; width:40%; height:40%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div> <br>
+
+		  
+		  
+		  <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/kg68cw?" width="100%" style="border:none; width:40%; height:40%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+		  
+		  <div style="position:relative; width:100%; height:0px; padding-bottom:56.250%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/hhns1x?loop=0" width="100%" style="border:none; width:40%; height:40%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+		  
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="contact-modal">
+    <div class="modal-content">
+      <span class="close" id="close-contact">&times;</span>
+      <h2>Contacto</h2>
+      <p>Texto del contacto.</p>
+      <img src="foto2.jpg" alt="Foto Contacto" />
+      <p>Contáctanos por correo o WhatsApp para más información sobre nuestros servicios.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="info-modal">
+    <div class="modal-content">
+      <span class="close" id="close-info">&times;</span>
+      <h2>Datos de Contacto</h2>
+      <p><strong>Email:</strong> contacto@ejemplo.com</p>
+      <p><strong>Teléfono:</strong> +54 9 11 1234 5678</p>
+      <p><strong>Dirección:</strong> Av. Siempre Viva 742, Buenos Aires</p>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <p class="bottom-text">© 2025 - www.Fabricio.Online</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
