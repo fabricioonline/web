@@ -660,3 +660,31 @@ body {
   cursor: url('cursor.png'), auto; /* Cursor por defecto */
 }
 
+
+
+
+.modal-text {
+  max-height: 300px; /* Ajusta este valor según tus necesidades */
+  overflow: auto; /* Agrega barras de desplazamiento cuando sea necesario */
+  word-wrap: break-word; /* Rompe palabras largas si es necesario */
+  /* Opcional: overflow-wrap: break-word; (para navegadores más modernos) */
+}
+
+
+.about-text {
+  max-height: 300px; /* Ajusta este valor */
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+.mision-text {
+  max-height: 200px; /* Ajusta este valor */
+  overflow: auto;
+  word-wrap: break-word;
+}
+
+.contact-box .contact-text {
+  max-height: 300px; /* Ajusta este valor */
+  overflow: auto;
+  word-wrap: break-word;
+}
