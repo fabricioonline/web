@@ -625,9 +625,9 @@ body{
 /* Estilo para el recuadro de contacto */
 .contact-box {
   position: relative;
-  width: 100%; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
+  width: 300px; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
   max-width: 400px; /* Ancho máximo */
-  height: 60%; /* Altura fija */
+  height: 300px; /* Altura fija */
   margin: 0 auto; /* Centra horizontalmente */
   background-image: url('fondocontacto.png'); /* Cambia 'tufondo.png' por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
