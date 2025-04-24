@@ -51,8 +51,8 @@ h1 {
   left: 0;
   width: 200%;
   height: 200%;
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 1px, transparent 1px, transparent 4px);
-  background-size: 4px 4px;
+  background-image: repeating-linear-gradient(90deg , rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 2px, transparent 1px, transparent 4px);
+  background-size: 100px 100px;
   z-index: -2;
   pointer-events: none;
 }
@@ -198,32 +198,44 @@ h1 {
 }
 
 .video-gallery {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex; /* Activa flexbox */
+  flex-wrap: wrap; /* Permite que los videos pasen a la siguiente fila */
+  justify-content: space-between; /* Espaciado uniforme entre las columnas */
 }
 
 .video-item {
-  width: 45%;
+  width: 48%; /* Cada video ocupa el 48% del ancho disponible (2 columnas) */
+  margin-bottom: 20px; /* Espaciado entre filas */
 }
 
-.service-video {
+.video-item iframe {
   width: 100%;
-  height: auto;
+  height: 200px;
 }
 
 .video-title {
-  text-align: center;
+  margin-top: 8px;
   font-size: 14px;
-  margin-top: 10px;
+  color: white;
 }
 
-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-top: 20px;
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  gap: 10px; /* Espaciado uniforme entre filas y columnas */
+  height: auto; /* Ajusta la altura automáticamente */
+}
+
+.photo-item {
+  margin: 0; /* Asegúrate de que no haya margen adicional */
+}
+
+.photo-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .bottom-bar {
@@ -276,15 +288,21 @@ img {
 }
 
 .floating-btn.whatsapp {
-  background-color: #25D366;
+  background-color: transparent;
 }
 
 .floating-btn.instagram {
-  background-color: #E1306C;
+  background-color: transparent;
 }
 
 .floating-btn.email {
-  background-color: #D44638;
+  background-color: transparent;
+}
+
+.floating-btn img {
+  width: 70%; /* Reducir al 70% del tamaño original */
+  height: auto; /* Mantener proporción de la imagen */
+  object-fit: cover; /* Ajustar la imagen al tamaño del botón */
 }
 
 .video-nav {
@@ -311,4 +329,324 @@ img {
 
 .video-nav.right {
   right: 10px;
+}
+
+.about-content {
+  display: flex; /* Activa Flexbox */
+  justify-content: center; /* Centra el contenido como un todo horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  gap: 20px; /* Espaciado entre el texto y la imagen */
+  height: calc(100% - 60px); /* Ajusta la altura para excluir el título */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.about-text {
+  max-width: 50%; /* Limita el ancho del texto */
+  color: white;
+  font-size: 16px;
+}
+
+.about-image {
+  max-width: 40%; /* Ajusta el ancho de la imagen */
+  height: auto; /* Mantén la proporción de la imagen */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Estilo para la barra de desplazamiento (scrollbar) */
+.modal-content {
+  scrollbar-width: thin; /* Para navegadores como Firefox */
+  scrollbar-color: #333 #111; /* Color del "thumb" y del "track" */
+}
+
+/* Estilo para navegadores basados en WebKit */
+.modal-content::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #898484; /* Color del "thumb" (la parte que se mueve) */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color del "thumb" al pasar el mouse */
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background-color: #111; /* Color del "track" (el fondo de la barra) */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  box-sizing: border-box;
+  transform: scale(0.5); /* Comienza más pequeño */
+  opacity: 0; /* Comienza transparente */
+  transition: transform 0.4s ease, opacity 0.4s ease; /* Transición suave */
+}
+
+.modal.show {
+  display: block;
+  transform: scale(1); /* Escala completa */
+  opacity: 1; /* Totalmente visible */
+  animation: modal-grow 0.4s ease-out; /* Animación de apertura */
+}
+
+@keyframes modal-grow {
+  0% {
+    transform: scale(0.5); /* Comienza pequeño */
+    opacity: 0; /* Transparente */
+  }
+  100% {
+    transform: scale(1); /* Tamaño final */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Estilo del pop-up flotante */
+.floating-popup {
+  position: fixed;
+  bottom: 40px; /* Posición desde el borde inferior */
+  left: 40px; /* Posición desde el borde izquierdo */
+  width: 150px; /* Ajusta el tamaño del pop-up */
+  height: 150px;
+	background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Escondido por defecto */
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  color: red; /* Resalta al pasar el mouse */
+}
+
+.logo-animation {
+  position: relative;
+  width: 200px; /* Ajusta el tamaño del logo */
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.logo-frame {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  animation: logo-switch 1s infinite;
+}
+
+.logo-frame:nth-child(2) {
+  animation-delay: 0.5s; /* Retrasa la animación del segundo logo */
+}
+
+@keyframes logo-switch {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 150px; /* Reduce el tamaño del logo */
+  }
+
+  .top-floating-buttons {
+    flex-direction: row; /* Cambia la dirección de los botones */
+    gap: 10px;
+  }
+
+  .video-gallery {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .photo-gallery img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: auto; /* Mantén la proporción */
+  }
+
+  .content h1 {
+    font-size: 30px; /* Reduce el tamaño del encabezado */
+  }
+
+  .content .subtitulo {
+    font-size: 16px; /* Reduce el subtítulo */
+  }
+}
+
+/* Ajustes para pantallas muy grandes (monitores anchos) */
+@media screen and (min-width: 1200px) {
+  .logo {
+    max-width: 300px; /* Amplía el logo */
+  }
+
+  .video-gallery {
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para videos */
+  }
+
+  .photo-gallery img {
+    max-width: 400px; /* Amplía las fotos */
+  }
+
+  .content h1 {
+    font-size: 60px; /* Aumenta el tamaño del encabezado */
+  }
+
+  .content .subtitulo {
+    font-size: 24px; /* Aumenta el subtítulo */
+  }
+}
+
+
+
+
+
+
+body{
+  margin:0;
+  padding:0;
+  background:#f2f2f2;
+  font-family: 'Acme';
+}
+
+.container{
+  max-width:1000px;
+  margin:0px auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
+}
+
+.card{
+  position:relative;
+  margin:20px 0;
+  width:300px;
+  height:200px;
+  background: #000000;
+	  transform-style:preserve-3d;
+  transform:perspective(2000px);
+  transition:1s;
+  box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+  z-index:1111;
+  transform:perspective(2000px) rotate(-10deg);
+  box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
+}
+
+.card .img-container{
+  position:relative;
+  width:100%;
+  height:100%;
+  
+  box-sizing:border-box;
+  transform-origin:left;
+  z-index:1;
+  transition:1s;
+}
+
+.card .img-container img{
+  position:absolute;
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
+
+.card:hover .img-container{
+  transform:rotateY(-135deg);
+}
+
+.card .card-details{
+  position:absolute;
+  left:0;
+  top:0;
+  box-sizing:border-box;
+  padding:20px;
+  color:#fff;
+}
+
+ .card .card-details h2{
+  margin:0;
+  padding:0.5em 0;
+  text-transform:uppercase;
+  font-size:12px;
+  color:#ed363a;
+}
+
+.card .card-details p{
+  margin:0;
+  padding:0;
+  line-height:25px;
+  font-size:12px;
+}
+
+
+/* Estilo para el recuadro de contacto */
+.contact-box {
+  position: relative;
+  width: 100%; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
+  max-width: 400px; /* Ancho máximo */
+  height: 300px; /* Altura fija */
+  margin: 0 auto; /* Centra horizontalmente */
+  background-image: url('fondocontacto.png'); /* Cambia 'tufondo.png' por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+  background-position: center; /* Centra la imagen */
+  border-radius: 0px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 30px; /* Espaciado interno */
+  color: white; /* Color del texto */
+  text-align: center; /* Centra el texto */
+	
+}
+
+/* Estilo del texto en el recuadro */
+.contact-text {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima del fondo */
+  font-size: 14px; /* Tamaño del texto */
+}
+
+.contact-text p {
+  margin: 5px 0; /* Espaciado entre líneas */
 }
