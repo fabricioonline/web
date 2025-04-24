@@ -627,7 +627,7 @@ body{
   position: relative;
   width: 100%; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
   max-width: 400px; /* Ancho máximo */
-  height: 300px; /* Altura fija */
+  height: 60%; /* Altura fija */
   margin: 0 auto; /* Centra horizontalmente */
   background-image: url('fondocontacto.png'); /* Cambia 'tufondo.png' por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
