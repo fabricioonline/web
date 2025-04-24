@@ -650,3 +650,13 @@ body{
 .contact-text p {
   margin: 5px 0; /* Espaciado entre líneas */
 }
+
+
+
+
+
+
+body {
+  cursor: url('cursor.png'), auto; /* Cursor por defecto */
+}
+

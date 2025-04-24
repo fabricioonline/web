@@ -1,11 +1,11 @@
-// Encapsular todo el código en un bloque para evitar conflictos
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   // Gestión de los botones y modales
   const buttons = {
     aboutBtn: document.getElementById("about-btn"),
     servicesBtn: document.getElementById("services-btn"),
     contactBtn: document.getElementById("contact-btn"),
     infoBtn: document.getElementById("info-btn"),
+	  misionBtn: document.getElementById("mision-btn"),
   };
 
   const modals = {
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     servicesModal: document.getElementById("services-modal"),
     contactModal: document.getElementById("contact-modal"),
     infoModal: document.getElementById("info-modal"),
+	  misionModal: document.getElementById("mision-modal"),
   };
 
   const closeButtons = {
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeServices: document.getElementById("close-services"),
     closeContact: document.getElementById("close-contact"),
     closeInfo: document.getElementById("close-info"),
+	  closeMision: document.getElementById("close-mision"),
   };
 
   function openModal(modal) {
@@ -54,6 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     openModal(modals.infoModal);
   });
+	
+	  buttons.misionBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal(modals.misionModal);
+  });
+	
+	
+	
+	
+	
 
   // Cerrar las modales al hacer clic en los botones de cerrar
   closeButtons.closeAbout.addEventListener("click", () => {
@@ -71,12 +83,22 @@ document.addEventListener("DOMContentLoaded", () => {
   closeButtons.closeInfo.addEventListener("click", () => {
     closeModal(modals.infoModal);
   });
+	
+	   closeButtons.closeMision.addEventListener("click", () => {
+    closeModal(modals.misionModal);
+  });
+	
+	
+	 
+	
+	
+	
 
   // Gestión de los videos de fondo
   const videoSources = [
-    "video/tu_video.mp4",
-    "video/fondo2.mp4",
-    "video/fondo3.mp4",
+    "video/bg1.mp4",
+    "video/bg2.mp4",
+    "video/bg3.mp4",
   ];
 
   let currentVideo = 0;
@@ -171,6 +193,3 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.style.display = "none";
   });
 });
-
-
-
