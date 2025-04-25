@@ -193,3 +193,39 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.style.display = "none";
   });
 });
+
+
+
+// Obtener todas las ventanas modales
+const modals = document.querySelectorAll('.modal');
+
+// Para cada ventana modal
+modals.forEach(modal => {
+  // Obtener el botón de cierre de la ventana modal
+  const closeButton = modal.querySelector('.close');
+
+  // Si no existe el botón de cierre, salir
+  if (!closeButton) return;
+
+  // Agregar un evento de clic al botón de cierre
+  closeButton.addEventListener('click', () => {
+    // Obtener todos los iframes dentro de la ventana modal
+    const iframes = modal.querySelectorAll('iframe');
+
+    // Detener cada iframe
+    iframes.forEach(iframe => {
+      const iframeSrc = iframe.getAttribute('src');
+      iframe.setAttribute('src', ''); // Detiene la reproducción
+      iframe.setAttribute('src', iframeSrc); // Restaura la URL original
+    });
+
+    // Obtener todos los audios dentro de la ventana modal
+    const audios = modal.querySelectorAll('audio');
+
+    // Detener cada audio
+    audios.forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0; // Reiniciar el audio al principio
+    });
+  });
+});

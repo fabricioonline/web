@@ -573,24 +573,25 @@ body{
   box-shadow:inset 20px 0 50px rgba(0,0,0,0.5);
 }
 
-.card .img-container{
-  position:relative;
-  width:100%;
-  height:100%;
-  
-  box-sizing:border-box;
-  transform-origin:left;
-  z-index:1;
-  transition:1s;
+.card .img-container {
+  position: relative;
+  width: 100%; /* Asegúrate de que ocupe el ancho completo */
+  height: auto; /* La altura se ajustará automáticamente */
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+  overflow: hidden; /* Evita que la imagen se desborde si object-fit: cover; la recorta */
 }
 
-.card .img-container img{
-  position:absolute;
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  object-fit:cover;
+.card .img-container img {
+  position: relative; /* Cambiado a relative para que fluya con el contenedor */
+  left: 0;
+  top: 0;
+  max-width: 100%; /* La imagen no debe ser más ancha que el contenedor */
+  height: auto; /* Mantiene la proporción */
+  object-fit: contain; /* Ajusta la imagen sin recortar, o usa 'cover' si prefieres recortar */
+  display: block; /* Elimina espacios innecesarios debajo de la imagen */
 }
 
 .card:hover .img-container{
@@ -681,6 +682,10 @@ body {
   max-height: 200px; /* Ajusta este valor */
   overflow: auto;
   word-wrap: break-word;
+}
+
+.mision-content {
+  padding: 50px; /* Agrega 30px de espacio en todos los lados */
 }
 
 .contact-box .contact-text {
