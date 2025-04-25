@@ -49,13 +49,16 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
-  background-image: repeating-linear-gradient(90deg , rgba(0, 0, 0, 0.4) 0, rgba(0, 0, 0, 0.4) 2px, transparent 1px, transparent 4px);
-  background-size: 100px 100px;
-  z-index: -2;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, black 10px, transparent 50px),
+    repeating-linear-gradient(90deg, black 10px, transparent 50px);
+  background-size: 5px 5px; /* Tamaño total de cada celda (2px cuadrado + 2px separación) */
+  z-index: 1; /* Asegúrate de que esté sobre el video */
+  pointer-events: none; /* Evita interferencias con eventos del usuario */
 }
+
 
 .content {
   position: fixed;
@@ -245,7 +248,7 @@ h1 {
   width: 100%;
   height: 30px;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 3;
+  z-index: 5;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -623,10 +626,7 @@ body{
 }
 
 
-.card-details {
-  word-wrap: break-word;
-  overflow: hidden;
-}
+
 
 
 
@@ -699,4 +699,20 @@ body {
   max-height: 300px; /* Ajusta este valor */
   overflow: auto;
   word-wrap: break-word;
+}
+
+/* Asegúrate de que el popup sea visible únicamente en la página de inicio */
+#floating-popup {
+  display: none; /* Por defecto oculto */
+}
+
+/* Mostrar el popup solo en la página de inicio */
+body.home #floating-popup {
+  display: block; /* Visible en la página de inicio */
+}
+
+/* Quitar la barra negra de la modal "Qué hago" */
+#about-modal .bottom-bar,
+#mision-modal .bottom-bar {
+  display: none; /* Ocultar la barra negra en estas modales específicas */
 }
