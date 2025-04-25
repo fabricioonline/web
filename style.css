@@ -623,6 +623,13 @@ body{
 }
 
 
+.card-details {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+
+
 /* Estilo para el recuadro de contacto */
 .contact-box {
   position: relative;
@@ -685,7 +692,7 @@ body {
 }
 
 .mision-content {
-  padding: 50px; /* Agrega 30px de espacio en todos los lados */
+  padding: 30px; /* Agrega 30px de espacio en todos los lados */
 }
 
 .contact-box .contact-text {
