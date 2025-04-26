@@ -424,12 +424,12 @@ h1 {
   position: fixed;
   bottom: 40px; /* Posición desde el borde inferior */
   left: 40px; /* Posición desde el borde izquierdo */
-  width: 150px; /* Ajusta el tamaño del pop-up */
+  width: 200px; /* Ajusta el tamaño del pop-up */
   height: 150px;
-	background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+	background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente */
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   display: none; /* Escondido por defecto */
   z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
