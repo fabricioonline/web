@@ -91,7 +91,7 @@ body, html {
 }
 
 .text-container {
-  max-width: 90%;
+  max-width: 80%;
   background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro (opacidad aumentada a 0.8) */
   padding: 20px;
 	margin-top: 20px;
@@ -151,10 +151,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.titulo-emprendedores {
-  width: 100%; /* La imagen ocupa todo el ancho disponible */
+
+.fotoprodu {
+  width: 80%; /* La imagen ocupa todo el ancho disponible */
   height: auto; /* Mantiene la proporción de la imagen */
-  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  max-width: 80%; /* Asegura que no exceda el ancho del contenedor */
+  display: block; /* Elimina cualquier espacio no deseado alrededor */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+
+
+
+.titulo-emprendedores {
+  width: 70%; /* La imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 70%; /* Asegura que no exceda el ancho del contenedor */
   display: block; /* Elimina cualquier espacio no deseado alrededor */
   margin: 0 auto; /* Centra la imagen horizontalmente */
 }
