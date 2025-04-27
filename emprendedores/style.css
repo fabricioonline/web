@@ -59,14 +59,14 @@ body, html {
 /* Logo */
 .header {
   position: relative;
-	top: 0px;
+  top: 0px;
   left: 0px;
 }
 
 .logo {
   width: auto;
   height: auto;
-	max-width: 100%; 
+  max-width: 100%; 
 }
 
 /* Contenedor del logo con fondo negro transparente */
@@ -75,7 +75,7 @@ body, html {
   width: 100vw; /* Se extiende de punta a punta horizontalmente */
   padding: 10px 0; /* Espaciado arriba y abajo del logo */
   text-align: center; /* Centra el logo dentro del contenedor */
-	box-sizing: border-box; /* Incluye padding en el ancho total */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
   overflow: hidden; /* Evita cualquier desbordamiento */
 }
 
@@ -94,10 +94,9 @@ body, html {
   max-width: 80%;
   background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro (opacidad aumentada a 0.8) */
   padding: 20px;
-	margin-top: 20px;
-	 word-wrap: break-word;
-	overflow: hidden;
-  
+  margin-top: 20px;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 /* Botón */
@@ -124,12 +123,30 @@ body, html {
   background-color: #609221;
 }
 
-
 /* Estilo para los títulos */
+h1 {
+  font-size: 2.5rem; /* Tamaño más grande para títulos principales */
+}
+
+h2 {
+  font-size: 2.25rem; /* Tamaño grande para subtítulos principales */
+}
+
+h3 {
+  font-size: 2rem; /* Tamaño mediano para subtítulos */
+}
+
+h4 {
+  font-size: 1.75rem; /* Tamaño ligeramente menor */
+}
+
+h5, h6 {
+  font-size: 1.5rem; /* Tamaño más pequeño para títulos secundarios */
+}
+
 h1, h2, h3, h4, h5, h6 {
-	font-size: 90%;
   font-weight: bold;
-	color: #E3D345;/* Aplica negrita a todos los títulos */
+  color: #E3D345; /* Color dorado */
 }
 
 @media screen and (max-width: 768px) {
@@ -139,11 +156,24 @@ h1, h2, h3, h4, h5, h6 {
 
   .text-container {
     max-width: 95%; /* Ajusta el ancho ligeramente en móviles */
+	  
     padding: 15px; /* Reduce el espaciado interno */
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-size: 90%; /* Reduce el tamaño de los títulos */
+  h1 {
+    font-size: 2rem; /* Ajusta para pantallas pequeñas */
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4, h5, h6 {
+    font-size: 1.25rem;
   }
 
   p {
@@ -151,18 +181,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 .fotoprodu {
-  width: 80%; /* La imagen ocupa todo el ancho disponible */
+  width: 100%; /* La imagen ocupa todo el ancho disponible */
   height: auto; /* Mantiene la proporción de la imagen */
-  max-width: 80%; /* Asegura que no exceda el ancho del contenedor */
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
   display: block; /* Elimina cualquier espacio no deseado alrededor */
   margin: 0 auto; /* Centra la imagen horizontalmente */
 }
-
-
-
-
 
 .titulo-emprendedores {
   width: 70%; /* La imagen ocupa todo el ancho disponible */
