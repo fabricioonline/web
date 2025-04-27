@@ -150,3 +150,18 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 95%; /* Reduce ligeramente el tamaño del texto */
   }
 }
+
+.titulo-emprendedores {
+  width: 100%; /* La imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  display: block; /* Elimina cualquier espacio no deseado alrededor */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+@media screen and (max-width: 768px) {
+  .titulo-emprendedores {
+    width: 90%; /* Reduce un poco el ancho de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+  }
+}
