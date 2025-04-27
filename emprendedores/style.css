@@ -75,6 +75,8 @@ body, html {
   width: 100vw; /* Se extiende de punta a punta horizontalmente */
   padding: 10px 0; /* Espaciado arriba y abajo del logo */
   text-align: center; /* Centra el logo dentro del contenedor */
+	box-sizing: border-box; /* Incluye padding en el ancho total */
+  overflow: hidden; /* Evita cualquier desbordamiento */
 }
 
 /* Contenido */
