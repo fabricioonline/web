@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 768px) {
   .titulo-emprendedores {
-    width: 90%; /* Reduce un poco el ancho de la imagen */
+    width: 97%; /* Reduce un poco el ancho de la imagen */
     margin: 0 auto; /* Centra la imagen */
   }
 }
