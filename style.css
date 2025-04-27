@@ -185,6 +185,25 @@ h1 {
   color: white;
 }
 
+
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 95%; /* Ocupa todo el ancho disponible */
+    height: 95%; /* Ajusta la altura automáticamente */
+    
+	  max-width: 100%; /* Elimina el límite de ancho */
+    max-height: 100%; /* Elimina el límite de altura */
+  }
+
+  .contact-text {
+    font-size: 12px; /* Reduce el tamaño del texto */
+    line-height: 1.4; /* Mejora la legibilidad en pantallas pequeñas */
+  }
+}
+
+
+
+
 .close {
   color: white;
   font-size: 30px;
@@ -633,9 +652,10 @@ body{
 /* Estilo para el recuadro de contacto */
 .contact-box {
   position: relative;
-  width: 300px; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
-  max-width: 400px; /* Ancho máximo */
-  height: 300px; /* Altura fija */
+  width: 90%; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
+  max-width: 600px; /* Ancho máximo */
+	
+  height: auto; /* Altura fija */
   margin: 0 auto; /* Centra horizontalmente */
   background-image: url('fondocontacto.png'); /* Cambia 'tufondo.png' por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
@@ -645,7 +665,7 @@ body{
   padding: 30px; /* Espaciado interno */
   color: white; /* Color del texto */
   text-align: center; /* Centra el texto */
-	
+	overflow: hidden;
 }
 
 /* Estilo del texto en el recuadro */
@@ -653,6 +673,12 @@ body{
   position: relative;
   z-index: 2; /* Asegura que el texto esté encima del fondo */
   font-size: 14px; /* Tamaño del texto */
+	line-height: 1.5;
+	overflow: hidden;
+	word-wrap: break-word; 
+	height: 100%;
+	
+	
 }
 
 .contact-text p {
