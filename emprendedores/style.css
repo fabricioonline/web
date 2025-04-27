@@ -72,7 +72,7 @@ body, html {
 /* Contenedor del logo con fondo negro transparente */
 .logo-container {
   background: rgba(0, 0, 0, 0.8); /* Fondo negro con 80% de opacidad */
-  width: 100%; /* Se extiende de punta a punta horizontalmente */
+  width: 100vw; /* Se extiende de punta a punta horizontalmente */
   padding: 10px 0; /* Espaciado arriba y abajo del logo */
   text-align: center; /* Centra el logo dentro del contenedor */
 }
@@ -89,11 +89,12 @@ body, html {
 }
 
 .text-container {
-  max-width: 900%;
+  max-width: 90%;
   background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro (opacidad aumentada a 0.8) */
   padding: 20px;
 	margin-top: 20px;
 	 word-wrap: break-word;
+	overflow: hidden;
   
 }
 
@@ -127,4 +128,23 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 90%;
   font-weight: bold;
 	color: #E3D345;/* Aplica negrita a todos los títulos */
+}
+
+@media screen and (max-width: 768px) {
+  .logo-container {
+    width: 100%; /* Asegúrate de que el contenedor ocupe toda la pantalla */
+  }
+
+  .text-container {
+    max-width: 95%; /* Ajusta el ancho ligeramente en móviles */
+    padding: 15px; /* Reduce el espaciado interno */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 90%; /* Reduce el tamaño de los títulos */
+  }
+
+  p {
+    font-size: 95%; /* Reduce ligeramente el tamaño del texto */
+  }
 }
