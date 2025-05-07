@@ -8,6 +8,7 @@
 body, html {
   height: 100%;
   font-family: Arial, sans-serif;
+	font-size: 14px;
   color: #fff;
   overflow: auto; /* Permitir desplazamiento vertical */
 }
@@ -91,12 +92,15 @@ body, html {
 }
 
 .text-container {
-  max-width: 80%;
+  max-width: 60%;
   background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro (opacidad aumentada a 0.8) */
   padding: 20px;
   margin-top: 20px;
   word-wrap: break-word;
   overflow: hidden;
+	margin: 0 auto; /* Centra el contenedor */
+  font-size: 1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.5; /* Mejora la legibilidad */
 }
 
 /* Botón */
@@ -112,8 +116,8 @@ body, html {
   background-color: #0B5511;
   color: #fff;
   border: none;
-  padding: 15px 30px;
-  font-size: 18px;
+  padding: 10px 20px;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -125,28 +129,24 @@ body, html {
 
 /* Estilo para los títulos */
 h1 {
-  font-size: 2.5rem; /* Tamaño más grande para títulos principales */
+  font-size: clamp(2rem, 5vw, 3rem); /* Escalar entre 2rem y 3rem según el ancho de la pantalla */
 }
 
 h2 {
-  font-size: 2.25rem; /* Tamaño grande para subtítulos principales */
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 
 h3 {
-  font-size: 2rem; /* Tamaño mediano para subtítulos */
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
-h4 {
-  font-size: 1.75rem; /* Tamaño ligeramente menor */
-}
-
-h5, h6 {
-  font-size: 1.5rem; /* Tamaño más pequeño para títulos secundarios */
+h4, h5, h6 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  color: #E3D345; /* Color dorado */
+  color: #FF6666; /* Color dorado */
 }
 
 @media screen and (max-width: 768px) {
@@ -161,20 +161,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   h1 {
-    font-size: 2rem; /* Ajusta para pantallas pequeñas */
-  }
+  font-size: clamp(2rem, 5vw, 3rem); /* Escalar entre 2rem y 3rem según el ancho de la pantalla */
+}
 
-  h2 {
-    font-size: 1.75rem;
-  }
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
 
-  h3 {
-    font-size: 1.5rem;
-  }
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
 
-  h4, h5, h6 {
-    font-size: 1.25rem;
-  }
+h4, h5, h6 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
 
   p {
     font-size: 95%; /* Reduce ligeramente el tamaño del texto */
@@ -203,3 +203,4 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto; /* Centra la imagen */
   }
 }
+
