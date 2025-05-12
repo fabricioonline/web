@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Gestión de los botones y modales
+  // Gestión de los botones y modales (sin cambios)
+
   const buttons = {
     aboutBtn: document.getElementById("about-btn"),
     servicesBtn: document.getElementById("services-btn"),
@@ -62,14 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal(modals.misionModal);
   });
 
-  // Cerrar las modales al hacer clic en los botones de cerrar
   closeButtons.closeAbout.addEventListener("click", () => {
     closeModal(modals.aboutModal);
   });
 
   closeButtons.closeServices.addEventListener("click", () => {
     closeModal(modals.servicesModal);
-    stopAllVideos(modals.servicesModal); // Detener videos al cerrar la modal de Portfolio
+    stopAllVideos(modals.servicesModal);
   });
 
   closeButtons.closeContact.addEventListener("click", () => {
@@ -91,18 +91,27 @@ document.addEventListener("DOMContentLoaded", () => {
     "video/bg3.mp4",
   ];
 
-  let currentVideo = 0;
+  let currentVideo = Math.floor(Math.random() * videoSources.length); // Selecciona un video aleatorio al cargar
   const backgroundVideo = document.getElementById("background-video");
   const prevBtn = document.getElementById("prev-video");
   const nextBtn = document.getElementById("next-video");
 
-  function changeVideo(index) {
-    currentVideo = (index + videoSources.length) % videoSources.length;
+  // Función para cargar y reproducir el video actual
+  function loadCurrentVideo() {
     backgroundVideo.pause();
     backgroundVideo.querySelector("source").src = videoSources[currentVideo];
     backgroundVideo.load();
     backgroundVideo.play();
   }
+
+  // Cambiar a videos previos o siguientes
+  function changeVideo(index) {
+    currentVideo = (index + videoSources.length) % videoSources.length;
+    loadCurrentVideo();
+  }
+
+  // Cargar el video aleatorio inicial
+  loadCurrentVideo();
 
   prevBtn.addEventListener("click", () => {
     changeVideo(currentVideo - 1);
@@ -130,24 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     popup.style.display = "block";
   }, 10000); // 10 segundos
-
-  // Cerrar el pop-up al hacer clic en la cruz
-  closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Código para mostrar el popup después de 10 segundos solo en la página de inicio
-  const popup = document.getElementById("floating-popup");
-  const closePopup = document.getElementById("popup-close");
-
-  if (document.body.classList.contains("home")) {
-    // Mostrar el pop-up después de 10 segundos
-    setTimeout(() => {
-      popup.style.display = "block";
-    }, 10000); // 10 segundos
-  }
 
   // Cerrar el pop-up al hacer clic en la cruz
   closePopup.addEventListener("click", () => {
