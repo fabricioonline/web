@@ -784,3 +784,25 @@ body.home #floating-popup {
 * {
   font-family: sans-serif;
 }
+
+
+@media screen and (max-width: 768px) {
+  /* Ajustar tamaño del título y subtítulo */
+  .content h1 {
+    font-size: 28px; /* Reduce el tamaño del título principal */
+    line-height: 1.2; /* Ajusta la altura de línea */
+    margin-top: 20px; /* Espacio superior para evitar solapamiento */
+  }
+
+  .content .subtitulo {
+    font-size: 16px; /* Reduce el tamaño del subtítulo */
+    line-height: 1.4; /* Mejora la legibilidad */
+    margin-top: 10px; /* Espacio superior adicional */
+  }
+
+  /* Ajustar el posicionamiento del contenedor para evitar solapamiento */
+  .content {
+    top: 20%; /* Baja el contenido un poco más */
+    transform: translate(-50%, -20%); /* Ajuste de la posición vertical */
+  }
+}
