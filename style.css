@@ -3,24 +3,16 @@
   src: url('fuente/titulo.otf') format('opentype');
 }
 
-
-
 .modal h2 {
   font-family: 'Titulo', sans-serif; /* Aplica la fuente "Titulo" a los títulos */
   font-size: 24px; /* Ajusta el tamaño del título según necesites */
   color: #B63B3D; /* Opcional: Ajusta el color */
 }
 
-
 @font-face {
   font-family: 'Subtitulo';
   src: url('fuente/subtitulo.otf') format('opentype');
 }
-
-
-
-
-
 
 * {
   font-family: sans-serif;
@@ -36,22 +28,19 @@ body {
 
 h1.animated-text.wave {
   font-size: 100px;
-	line-height: .8;
+  line-height: .8;
 }
 
 h1 {
   font-family: 'Titulo', sans-serif;
   font-size: 100px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-	white-space: normal;
+  white-space: normal;
 }
-
 
 .ampersand {
   color: #B63B3D;
 }
-
-
 
 .subtitulo {
   font-family: 'Subtitulo', sans-serif;
@@ -59,15 +48,12 @@ h1 {
   margin-top: 15px;
   text-transform: none;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 100);
-	
 }
-
 
 .highlight {
   color: red; 
-	font-family: 'Subtitulo', sans-serif;
+  font-family: 'Subtitulo', sans-serif;
 }
-
 
 #background-video {
   position: fixed;
@@ -93,7 +79,6 @@ h1 {
   z-index: 1; /* Asegúrate de que esté sobre el video */
   pointer-events: none; /* Evita interferencias con eventos del usuario */
 }
-
 
 .content {
   position: fixed;
@@ -178,19 +163,17 @@ h1 {
   font-size: 13px;
   text-transform: uppercase;
   transition: all 0.3s ease;
-	
 }
 
 .floating-menu-btn:hover {
   transform: translateX(-5px);
   color: red;
-	
 }
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 4;
+  z-index: 1000 !important;
   left: 0;
   top: 0;
   width: 100%;
@@ -222,13 +205,11 @@ h1 {
   color: white;
 }
 
-
 @media screen and (max-width: 768px) {
   .modal-content {
     width: 95%; /* Ocupa todo el ancho disponible */
     height: 95%; /* Ajusta la altura automáticamente */
-    
-	  max-width: 100%; /* Elimina el límite de ancho */
+    max-width: 100%; /* Elimina el límite de ancho */
     max-height: 100%; /* Elimina el límite de altura */
   }
 
@@ -237,9 +218,6 @@ h1 {
     line-height: 1.4; /* Mejora la legibilidad en pantallas pequeñas */
   }
 }
-
-
-
 
 .close {
   color: white;
@@ -346,14 +324,8 @@ h1 {
   opacity: 0.8;
 }
 
-.floating-btn.whatsapp {
-  background-color: transparent;
-}
-
-.floating-btn.instagram {
-  background-color: transparent;
-}
-
+.floating-btn.whatsapp,
+.floating-btn.instagram,
 .floating-btn.email {
   background-color: transparent;
 }
@@ -373,7 +345,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px 14px;
   cursor: pointer;
-  z-index: 5;
+  z-index: 10 !important;
   user-select: none;
   transition: background-color 0.3s ease;
 }
@@ -443,7 +415,7 @@ h1 {
 .modal {
   display: none;
   position: fixed;
-  z-index: 4;
+  z-index: 1000 !important;
   left: 0;
   top: 0;
   width: 100%;
@@ -476,18 +448,19 @@ h1 {
 }
 
 /* Estilo del pop-up flotante */
-.floating-popup {
+.floating-popup,
+#floating-popup {
   position: fixed;
   bottom: 40px; /* Posición desde el borde inferior */
   left: 40px; /* Posición desde el borde izquierdo */
   width: 180px; /* Ajusta el tamaño del pop-up */
   height: 220px;
-	background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente */
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   display: none; /* Escondido por defecto */
-  z-index: 1000; /* Asegura que esté encima de otros elementos */
+  z-index: 10 !important; /* MODIFICADO: debajo de los modales */
 }
 
 .popup-image {
@@ -539,8 +512,6 @@ h1 {
     opacity: 0;
   }
 }
-
-
 
 /* Ajustes para pantallas pequeñas (móviles) */
 @media screen and (max-width: 768px) {
@@ -594,11 +565,6 @@ h1 {
   }
 }
 
-
-
-
-
-
 body{
   margin:0;
   padding:0;
@@ -620,7 +586,7 @@ body{
   width:300px;
   height:200px;
   background: #000000;
-	  transform-style:preserve-3d;
+  transform-style:preserve-3d;
   transform:perspective(2000px);
   transition:1s;
   box-shadow:inset 100px 0 50px rgba(0,0,0,0.5);
@@ -666,7 +632,7 @@ body{
   color:#fff;
 }
 
- .card .card-details h2{
+.card .card-details h2{
   margin:0;
   padding:0.5em 0;
   text-transform:uppercase;
@@ -681,17 +647,11 @@ body{
   font-size:12px;
 }
 
-
-
-
-
-
 /* Estilo para el recuadro de contacto */
 .contact-box {
   position: relative;
   width: 90%; /* Ajusta esto si quieres un ancho fijo, ej: 300px */
   max-width: 600px; /* Ancho máximo */
-	
   height: auto; /* Altura fija */
   margin: 0 auto; /* Centra horizontalmente */
   background-image: url('fondocontacto.png'); /* Cambia 'tufondo.png' por la ruta de tu imagen */
@@ -702,7 +662,7 @@ body{
   padding: 30px; /* Espaciado interno */
   color: white; /* Color del texto */
   text-align: center; /* Centra el texto */
-	overflow: hidden;
+  overflow: hidden;
 }
 
 /* Estilo del texto en el recuadro */
@@ -710,29 +670,19 @@ body{
   position: relative;
   z-index: 2; /* Asegura que el texto esté encima del fondo */
   font-size: 14px; /* Tamaño del texto */
-	line-height: 1.5;
-	overflow: hidden;
-	word-wrap: break-word; 
-	height: 100%;
-	
-	
+  line-height: 1.5;
+  overflow: hidden;
+  word-wrap: break-word; 
+  height: 100%;
 }
 
 .contact-text p {
   margin: 5px 0; /* Espaciado entre líneas */
 }
 
-
-
-
-
-
 body {
   cursor: url('cursor.png'), auto; /* Cursor por defecto */
 }
-
-
-
 
 .modal-text {
   max-height: 300px; /* Ajusta este valor según tus necesidades */
@@ -740,7 +690,6 @@ body {
   word-wrap: break-word; /* Rompe palabras largas si es necesario */
   /* Opcional: overflow-wrap: break-word; (para navegadores más modernos) */
 }
-
 
 .about-text {
   max-height: 300px; /* Ajusta este valor */
@@ -780,11 +729,9 @@ body.home #floating-popup {
   display: none; /* Ocultar la barra negra en estas modales específicas */
 }
 
-
 * {
   font-family: sans-serif;
 }
-
 
 @media screen and (max-width: 768px) {
   /* Ajustar tamaño del título principal */
@@ -810,3 +757,79 @@ body.home #floating-popup {
     transform: translate(-50%, -20%); /* Ajuste de posición para móviles */
   }
 }
+
+.portfolio-thumbnail {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  background: #000;
+}
+.portfolio-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  opacity: 0.8;
+  pointer-events: none;
+  text-shadow: 0 0 10px #000;
+  transition: color 0.2s, opacity 0.2s;
+}
+.portfolio-thumbnail:hover .play-overlay {
+  color: #DB0E11;
+  opacity: 1;
+}
+
+/* Estilo solo para la cruz del reproductor de video */
+#video-player-container .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 10;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#video-player-container .close:hover {
+  background: transparent;
+  color: #DB0E11; /* rojo oscuro de tu paleta o el que prefieras */
+}
+#video-player-container {
+  position: relative; /* Para que la cruz se posicione respecto al contenedor */
+  padding-top: 40px; /* Deja espacio para la cruz arriba */
+}
+
+/* MODIFICACIÓN: Flechas y popup por detrás de los modales */
+#prev-video,
+#next-video,
+#floating-popup {
+  z-index: 10 !important;
+  position: absolute; /* o fixed, como lo tengas definido en tu HTML */
+}
+
+/* Asegura que los modales estén encima de todo */
+.modal {
+  z-index: 1000 !important;
+}
+
+
+

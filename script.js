@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Gestión de los botones y modales (sin cambios)
+  // =======================
+  // MODALES Y SECCIONES
+  // =======================
 
   const buttons = {
     aboutBtn: document.getElementById("about-btn"),
@@ -38,65 +40,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Abrir las modales al hacer clic en los botones
-  buttons.aboutBtn.addEventListener("click", (e) => {
+  if (buttons.aboutBtn) buttons.aboutBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openModal(modals.aboutModal);
   });
 
-  buttons.servicesBtn.addEventListener("click", (e) => {
+  if (buttons.servicesBtn) buttons.servicesBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openModal(modals.servicesModal);
   });
 
-  buttons.contactBtn.addEventListener("click", (e) => {
+  if (buttons.contactBtn) buttons.contactBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openModal(modals.contactModal);
   });
 
-  buttons.infoBtn.addEventListener("click", (e) => {
+  if (buttons.infoBtn) buttons.infoBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openModal(modals.infoModal);
   });
 
-  buttons.misionBtn.addEventListener("click", (e) => {
+  if (buttons.misionBtn) buttons.misionBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openModal(modals.misionModal);
   });
 
-  closeButtons.closeAbout.addEventListener("click", () => {
+  if (closeButtons.closeAbout) closeButtons.closeAbout.addEventListener("click", () => {
     closeModal(modals.aboutModal);
   });
 
-  closeButtons.closeServices.addEventListener("click", () => {
+  if (closeButtons.closeServices) closeButtons.closeServices.addEventListener("click", () => {
     closeModal(modals.servicesModal);
     stopAllVideos(modals.servicesModal);
   });
 
-  closeButtons.closeContact.addEventListener("click", () => {
+  if (closeButtons.closeContact) closeButtons.closeContact.addEventListener("click", () => {
     closeModal(modals.contactModal);
   });
 
-  closeButtons.closeInfo.addEventListener("click", () => {
+  if (closeButtons.closeInfo) closeButtons.closeInfo.addEventListener("click", () => {
     closeModal(modals.infoModal);
   });
 
-  closeButtons.closeMision.addEventListener("click", () => {
+  if (closeButtons.closeMision) closeButtons.closeMision.addEventListener("click", () => {
     closeModal(modals.misionModal);
   });
 
-  // Gestión de los videos de fondo
+  // =======================
+  // VIDEO DE FONDO
+  // =======================
+
   const videoSources = [
     "video/bg1.mp4",
     "video/bg2.mp4",
     "video/bg3.mp4",
   ];
 
-  let currentVideo = Math.floor(Math.random() * videoSources.length); // Selecciona un video aleatorio al cargar
+  let currentVideo = Math.floor(Math.random() * videoSources.length);
   const backgroundVideo = document.getElementById("background-video");
   const prevBtn = document.getElementById("prev-video");
   const nextBtn = document.getElementById("next-video");
 
-  // Función para cargar y reproducir el video actual
   function loadCurrentVideo() {
     backgroundVideo.pause();
     backgroundVideo.querySelector("source").src = videoSources[currentVideo];
@@ -104,24 +108,25 @@ document.addEventListener("DOMContentLoaded", () => {
     backgroundVideo.play();
   }
 
-  // Cambiar a videos previos o siguientes
   function changeVideo(index) {
     currentVideo = (index + videoSources.length) % videoSources.length;
     loadCurrentVideo();
   }
 
-  // Cargar el video aleatorio inicial
   loadCurrentVideo();
 
-  prevBtn.addEventListener("click", () => {
+  if (prevBtn) prevBtn.addEventListener("click", () => {
     changeVideo(currentVideo - 1);
   });
 
-  nextBtn.addEventListener("click", () => {
+  if (nextBtn) nextBtn.addEventListener("click", () => {
     changeVideo(currentVideo + 1);
   });
 
-  // Función para detener todos los videos dentro de una modal
+  // =======================
+  // DETENER VIDEOS EN MODAL
+  // =======================
+
   function stopAllVideos(modal) {
     const iframes = modal.querySelectorAll("iframe");
     iframes.forEach((iframe) => {
@@ -131,17 +136,84 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Código para el pop-up flotante
+  // =======================
+  // POPUP FLOTANTE
+  // =======================
+
   const popup = document.getElementById("floating-popup");
   const closePopup = document.getElementById("popup-close");
 
   // Mostrar el pop-up después de 10 segundos
   setTimeout(() => {
-    popup.style.display = "block";
-  }, 10000); // 10 segundos
+    if (popup) popup.style.display = "block";
+  }, 10000);
 
-  // Cerrar el pop-up al hacer clic en la cruz
-  closePopup.addEventListener("click", () => {
+  if (closePopup) closePopup.addEventListener("click", () => {
     popup.style.display = "none";
   });
+
+  // =======================
+  // MODAL REPRODUCTOR DE VIDEO PORTFOLIO
+  // =======================
+  const videoPlayerModal = document.getElementById('video-player-modal');
+  const videoPlayerContainer = document.getElementById('video-player-container');
+  const servicesModal = document.getElementById('services-modal');
+
+  document.querySelector('.video-gallery')?.addEventListener('click', function(e) {
+    const thumb = e.target.closest('.portfolio-thumbnail');
+    if (thumb) {
+      e.preventDefault();
+      const videoSrc = thumb.getAttribute('data-video-src');
+      openVideoPlayerModal(videoSrc);
+    }
+  });
+
+  function openVideoPlayerModal(src) {
+    let finalSrc = src;
+    if (finalSrc.includes("?")) {
+      if (!/(\?|&)autoplay=1/.test(finalSrc)) {
+        finalSrc += "&autoplay=1";
+      }
+    } else {
+      finalSrc += "?autoplay=1";
+    }
+
+    videoPlayerContainer.innerHTML = '<span id="close-video-player" class="close">&times;</span>';
+    const iframe = document.createElement('iframe');
+    iframe.src = finalSrc;
+    iframe.allow = "autoplay; fullscreen; picture-in-picture";
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.style.width = '100%';
+    iframe.style.height = '400px';
+    iframe.style.border = 'none';
+    videoPlayerContainer.appendChild(iframe);
+
+    videoPlayerModal.classList.add('show');
+    videoPlayerModal.style.display = 'block';
+
+    videoPlayerContainer.onclick = function(ev) {
+      ev.stopPropagation();
+    };
+
+    document.getElementById('close-video-player').onclick = closeVideoModal;
+  }
+
+  function closeVideoModal() {
+    videoPlayerModal.classList.remove('show');
+    setTimeout(() => {
+      videoPlayerModal.style.display = 'none';
+      videoPlayerContainer.innerHTML = '';
+      // openModal(servicesModal); // Si quieres reabrir el portfolio
+    }, 400);
+  }
+
+  videoPlayerModal.addEventListener('click', (e) => {
+    if (e.target === videoPlayerModal) {
+      closeVideoModal();
+    }
+  });
+
+ 
 });
+  
+  
